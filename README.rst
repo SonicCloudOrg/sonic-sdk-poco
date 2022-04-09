@@ -1,3 +1,5 @@
+This repo is fork from `Poco-SDK`_
+==================================
 
 .. raw:: html
     
@@ -24,7 +26,7 @@ Feel free to `open an issue`_ if you are stuck at integrating the SDK module in 
 
 The title format will be ``[<EngineName>-sdk] xxx``. e.g. ``[cocos2dx-lua sdk] XXX Error occurs when...``
 
-
+.. _Poco-SDK: https://github.com/AirtestProject/Poco-SDK
 .. _Integration Guide: http://poco.readthedocs.io/en/latest/source/doc/integration.html
 .. _open an issue: https://github.com/AirtestProject/Poco-SDK/issues/new
 
