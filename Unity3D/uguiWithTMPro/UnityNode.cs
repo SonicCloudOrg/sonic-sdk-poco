@@ -29,7 +29,7 @@ namespace Poco
             { "RectTransform", "Node" },
             { "TextMeshProUGUI","TMPROUGUI" },
             { "TMP_Text","TMPRO" },
-        };
+            };
         public static string DefaultTypeName = "GameObject";
         private GameObject gameObject;
         private Renderer renderer;
@@ -212,7 +212,7 @@ namespace Poco
             Button button = gameObject.GetComponent<Button>();
             return button ? button.isActiveAndEnabled : false;
         }
-
+        
         private string GameObjectText()
         {
             TMP_Text tmpText = gameObject.GetComponent<TMP_Text>();
@@ -227,7 +227,7 @@ namespace Poco
             }
             Text text = gameObject.GetComponent<Text>();
             return text ? text.text : null;
-        }
+		}
 
         private string GameObjectTag()
         {
@@ -345,21 +345,21 @@ namespace Poco
             // 如果unity版本小于unity5.5，就用递归的方式取吧，没法直接取rootCanvas
             // 如果有用到4.6以下版本的话就自己手动在这里添加条件吧
 #if UNITY_4_6 || UNITY_4_7 || UNITY_4_8 || UNITY_4_9 || UNITY_5_0 || UNITY_5_1 || UNITY_5_2 || UNITY_5_3 || UNITY_5_4
-			if (canvas && canvas.isRootCanvas)
-			{
-				return canvas;
-			}
-			else
-			{
-				if (gameObject.transform.parent.gameObject != null)
-				{
-					return GetRootCanvas(gameObject.transform.parent.gameObject);
-				}
-				else
-				{
-					return null;
-				}
-			}
+            if (canvas && canvas.isRootCanvas) 
+            {
+                return canvas;
+            } 
+            else 
+            {
+                if (gameObject.transform.parent.gameObject != null)
+                {
+                    return GetRootCanvas(gameObject.transform.parent.gameObject);
+                } 
+                else 
+                {
+                    return null;
+                }
+            }
 #else
             if (canvas && canvas.isRootCanvas)
             {
